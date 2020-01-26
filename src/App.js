@@ -9,6 +9,9 @@ import JeopardyBoard from './JeopardyBoard';
 import Scoreboard from './Scoreboard';
 import FinalJeopardy from './FinalJeopardy';
 
+
+import game from './cs51.json';
+
 ReactGA.initialize('UA-123778931-2', {
   gaOptions: {
     siteSpeedSampleRate: 100
@@ -22,7 +25,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       categoriesShown: 0,
-      game: null,
+      game: game.game,
       players: [],
       playing: false,
       round: "single",
@@ -40,7 +43,7 @@ class App extends React.Component {
       return (
         <div className="app">
           <GameLoader
-            updateGame={this.updateGame} 
+            updateGame={this.updateGame}
           />
         </div>
       );
@@ -57,7 +60,7 @@ class App extends React.Component {
     } else if (this.state.round === "single" || this.state.round === "double") {
       const { categoriesShown, currentCategory, currentClue } = this.state;
       const board = this.state.game[this.state.round];
-      
+
       // See if we should be able to proceed to Double Jeopardy
       let allowProceedToDouble = this.state.round === "single";
       if (allowProceedToDouble) {
