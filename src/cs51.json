@@ -362,7 +362,7 @@
                     {
                         "value": 400,
                         "html": true,
-                        "clue": "Writing functions that take arguments one at a time, instead of taking multiple arguments simultaneously, was popularied by this computer scientist.",
+                        "clue": "Writing functions that take arguments one at a time, instead of taking multiple arguments simultaneously, was popularized by this computer scientist.",
                         "solution": "Who is Haskell Curry?"
                     },
                     {
