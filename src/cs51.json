@@ -280,7 +280,7 @@
                     {
                         "value": 2000,
                         "html": true,
-                        "clue": "The verbose extraction and reinjection of values into option types, this can also be used for handling anomalous conditions.",
+                        "clue": "To avoid the verbose extraction and reinjection of values into option types, this can also be used for handling anomalous conditions.",
                         "solution": "What is exception?"
                     }
                 ]
