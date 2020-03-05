@@ -61,13 +61,13 @@
                         "value": 800,
                         "html": true,
                         "dailyDouble": true,
-                        "clue": "The type of <span class='code'>List.length</span>.",
+                        "clue": "The type of <span class='code'>List.length</span>",
                         "solution": "What is <span class='code'>'a list -> int</span>?"
                     },
                     {
                         "value": 1000,
                         "html": true,
-                        "clue": "The type of <span class='code'>List.map</span>.",
+                        "clue": "The type of <span class='code'>List.map</span>",
                         "solution": "What is <span class='code'>('a -> 'b) -> 'a list -> 'b list</span>?"
                     }
                 ]
@@ -291,13 +291,13 @@
                     {
                         "value": 400,
                         "html": true,
-                        "clue": "The type of <span class='code'>List.map (fun x -> x *. x).</span>",
+                        "clue": "The type of <span class='code'>List.map (fun x -> x *. x)</span>",
                         "solution": "What is <span class='code'>float list -> float list</span>?"
                     },
                     {
                         "value": 800,
                         "html": true,
-                        "clue": "The value of <span class='code'>List.map (fun x -> x > 10) [5; 10; 15]</span>.",
+                        "clue": "The value of <span class='code'>List.map (fun x -> x > 10) [5; 10; 15]</span>",
                         "solution": "What is <span class='code'>[false; false; true]</span>?"
                     },
                     {
