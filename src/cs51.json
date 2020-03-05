@@ -2,168 +2,178 @@
     "game": {
         "single": [
             {
-                "category": "Type Inference",
-                "clues": [
-                    {
-                        "value": 200,
-                        "html": true,
-                        "clue": "<span class='code'>2 + 8</span>",
-                        "solution": "What is <span class='code'>int</span>?"
-                    },
-                    {
-                        "value": 400,
-                        "html": true,
-                        "clue": "<span class='code'>fun x -> x +. x</span>",
-                        "solution": "What is <span class='code'>float -> float</span>?"
-                    },
-                    {
-                        "value": 600,
-                        "html": true,
-                        "clue": "<span class='code'>fun x y -> x :: y</span>",
-                        "solution": "What is <span class='code'>'a -> 'a list -> 'a list</span>?"
-                    },
-                    {
-                        "value": 800,
-                        "html": true,
-                        "clue": "<span class='code'>(fun x y -> x + y) 28</span>",
-                        "solution": "What is <span class='code'>int -> int</span>?"
-                    },
-                    {
-                        "value": 1000,
-                        "html": true,
-                        "clue": "<span class='code'>List.map</span>",
-                        "solution": "What is <span class='code'>('a -> 'b) -> 'a list -> 'b list</span>?"
-                    }
-                ]
-            },
-            {
                 "category": "Compute the Value",
                 "clues": [
                     {
                         "value": 200,
                         "html": true,
-                        "clue": "<ul class='code-lines'><li>let f x = x * 2 in</li><li>f 3 ;;</li></ul>",
-                        "solution": "What is <span class='code'>6</span>?"
+                        "clue": "<ul class='code-lines'><li>let f x = x + 1 in</li><li>f (f 8) ;;</li></ul>",
+                        "solution": "What is <span class='code'>10</span>?"
                     },
                     {
                         "value": 400,
                         "html": true,
-                        "clue": "<ul class='code-lines'><li>let x = (1.0, 0.2) in</li><li>let y, z = x in</li><li>(-.) y z ;;</li></ul>",
-                        "solution": "What is <span class='code'>0.8</span>?"
+                        "clue": "<ul class='code-lines'><li>let lst = [1; 2; 3; 4] in</li><li>match lst with</li><li>| [] -> lst</li><li>| hd :: tl -> tl ;;</li></ul>",
+                        "solution": "What is <span class='code'>[2; 3; 4]</span>?"
                     },
                     {
                         "value": 600,
                         "html": true,
-                        "clue": "<span class='code'>(fun x y z -> z y x) 2 5 (-) ;;</span>",
+                        "clue": "<ul class='code-lines'><li>let f x y = x + y in</li><li>let g = f 20 in</li><li>g 8 ;;</li></ul>",
+                        "solution": "What is <span class='code'>28</span>?"
+                    },
+                    {
+                        "value": 800,
+                        "html": true,
+                        "clue": "<ul class='code-lines'><li>let f x y z = y x in</li><li>f 3 ((+) 4) ((+) 5) ;;</li></ul>",
+                        "solution": "What is <span class='code'>7</span>?"
+                    },
+                    {
+                        "value": 1000,
+                        "html": true,
+                        "clue": "<ul class='code-lines'><li>let x = 2 in</li><li>let y = 3 in</li><li>let f x y = x in</li><li>f y x ;;</li></ul>",
                         "solution": "What is <span class='code'>3</span>?"
-                    },
-                    {
-                        "value": 800,
-                        "html": true,
-                        "clue": "<ul class='code-lines'><li>let lst = [5; 10; 15] in</li><li>List.fold_left (+) 0 lst ;;</li></ul>",
-                        "solution": "What is <span class='code'>30</span>?"
-                    },
-                    {
-                        "value": 1000,
-                        "html": true,
-                        "clue": "<ul class='code-lines'><li>[1;2;3;4;5]</li><li>|> List.map (( * ) 2)</li><li>|> List.filter (fun x -> x > 5)</li><li>|> List.length</li></ul>",
-                        "solution": "What is <span class='code'>3</span>?"
                     }
                 ]
             },
             {
-                "category": "Composite Types",
+                "category": "Lists",
                 "clues": [
                     {
                         "value": 200,
-                        "clue": "A value of this type can be nil, or the cons of an element and another type.",
-                        "solution": "What is list?"
+                        "html": true,
+                        "clue": "The two parts of a non-empty list.",
+                        "solution": "What are head and tail?"
                     },
                     {
                         "value": 400,
-                        "clue": "There are two general approaches to handling anomalous conditions in OCaml: using exceptions, and using these.",
-                        "solution": "What are option types?"
+                        "html": true,
+                        "clue": "In the expression <span class='code'>x :: y</span>, if <span class='code'>x</span> is a <span class='code'>float</span>, then this must be type for <span class='code'>y</span>.",
+                        "solution": "What is <span class='code'>float list</span>?"
                     },
                     {
                         "value": 600,
-                        "clue": "This type represents the ordered conjunction of two or more components.",
-                        "solution": "What are tuples?"
+                        "html": true,
+                        "clue": "The type of the following list. <div class='code'>[Some (2, 8); None; Some (5, 1)]</div>",
+                        "solution": "What is <span class='code'>(int * int) option list</span>?"
                     },
                     {
                         "value": 800,
-                        "clue": "To encapsulate values for one or more named fields, OCaml offers this type.",
-                        "solution": "What are records?"
+                        "html": true,
+                        "dailyDouble": true,
+                        "clue": "The type of <span class='code'>List.length</span>.",
+                        "solution": "What is <span class='code'>'a list -> int</span>?"
                     },
                     {
                         "value": 1000,
-                        "clue": "This type is an algebraic data type representing a disjunction of possible value constructors.",
-                        "solution": "What are variant types?"
+                        "html": true,
+                        "clue": "The type of <span class='code'>List.map</span>.",
+                        "solution": "What is <span class='code'>('a -> 'b) -> 'a list -> 'b list</span>?"
                     }
                 ]
             },
             {
-                "category": "Write the Function",
+                "category": "Type Inference",
                 "clues": [
                     {
                         "value": 200,
                         "html": true,
-                        "clue": "Write a function that takes an integer, and returns its square.",
-                        "solution": "What is <span class='code'>let f x = x * x</span>?"
+                        "clue": "<span class='code'>3.0 -. 2.0</span>",
+                        "solution": "What is <span class='code'>float</span>?"
                     },
                     {
                         "value": 400,
                         "html": true,
-                        "clue": "Write a function that takes two integers, and returns the larger of the two.",
-                        "solution": "What is <span class='code'>let f = max</span>?"
+                        "clue": "<span class='code'>fun (x, y) -> x + y</span>",
+                        "solution": "What is <span class='code'>int * int -> int</span>?"
                     },
                     {
                         "value": 600,
                         "html": true,
-                        "clue": "Write a function that takes a list, and returns a new list with each element incremented by one.",
-                        "solution": "What is <span class='code'>let f = List.map ((+) 1)</span>?"
+                        "clue": "<span class='code'>fun x -> x :: [x]</span>",
+                        "solution": "What is <span class='code'>'a -> 'a list</span>?"
                     },
                     {
                         "value": 800,
                         "html": true,
-                        "clue": "Write a function that takes a list of integers, and returns the sum of the positive ones.",
-                        "solution": "What is <ul class='code-lines'><li>let f lst = List.fold_left (+) 0</li><li>&nbsp;&nbsp;&nbsp;&nbsp;(List.filter (fun x -> x > 0) lst)</li></ul>?"
+                        "clue": "<span class='code'>(fun x y -> x * y) 2</span>",
+                        "solution": "What is <span class='code'>int -> int</span>?"
                     },
                     {
                         "value": 1000,
                         "html": true,
-                        "clue": "Write a function that takes an integer, and computes its factorial.",
-                        "solution": "What is <ul class='code-lines'><li>let rec f x =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;if x <= 1 then 1</li><li>&nbsp;&nbsp;&nbsp;&nbsp;else x * f (x - 1)</li></ul>?"
+                        "clue": "<span class='code'>List.filter (fun x -> x > 0)</span>",
+                        "solution": "What is <span class='code'>int list -> int list</span>?"
                     }
                 ]
             },
             {
-                "category": "Vocabulary",
+                "category": "Define a Type",
                 "clues": [
                     {
                         "value": 200,
-                        "clue": "This is the systematic evaluation of code on known inputs, comparing the behavior to the expected.",
-                        "solution": "What is unit testing?"
+                        "html": true,
+                        "clue": "An ADT <span class='code'>season</span> for representing one of the four seasons.",
+                        "solution": "What is <span class='code'>type season = Spring | Summer | Fall | Winter</span>?"
                     },
                     {
                         "value": 400,
-                        "clue": "This word, which means \"many forms\", can refer to a function that operates on multiple types.",
-                        "solution": "What is polymorphic?",
-                        "dailyDouble": true
+                        "html": true,
+                        "clue": "A type <span class='code'>time</span> for representing the current time (in hours and minutes).",
+                        "solution": "What is <span class='code'>type time = {hour: int; minute: int}</span>?"
                     },
                     {
                         "value": 600,
-                        "clue": "A function that takes its arguments one at a time, returning a function after each argument before the last, is this kind of function.",
-                        "solution": "What is curried?"
+                        "html": true,
+                        "clue": "A type <span class='code'>shape</span> for representing either a circle with a radius or a rectangle with a width and height.",
+                        "solution": "What is <ul class='code-lines'><li>type shape =</li><li>| Circle of int</li><li>| Rectangle of int * int</li></ul>?"
                     },
                     {
                         "value": 800,
-                        "clue": "Functions that take functions as arguments or return functions as values are these kinds of functions.",
-                        "solution": "What are higher-order functions?"
+                        "html": true,
+                        "clue": "A type <span class='code'>number</span> for representing either an integer or a floating point number.",
+                        "solution": "What is <ul class='code-lines'><li>type vote =</li><li>| CandidateA</li><li>| CandidateB</li><li>| WriteIn of string</li></ul>?"
                     },
                     {
                         "value": 1000,
-                        "clue": "A language where the type of an expression can be determined just by examining the expression in context is this type of language.",
-                        "solution": "What is statically typed?"
+                        "html": true,
+                        "clue": "A type <span class='code'>vote</span> for representing a vote in an election for Candidate A, Candidate B, or a write-in that could be any name.",
+                        "solution": "What is <ul class='code-lines'><li>type vote =</li><li>| CandidateA</li><li>| CandidateB</li><li>| WriteIn of string</li></ul>?"
+                    }
+                ]
+            },
+            {
+                "category": "Crossword Clues P",
+                "clues": [
+                    {
+                        "value": 200,
+                        "html": true,
+                        "clue": "11 letters. A type of function that can take arguments of multiple different types.",
+                        "solution": "What is polymorphic?"
+                    },
+                    {
+                        "value": 400,
+                        "html": true,
+                        "clue": "4 letters. A way to describe a function with no side effects.",
+                        "solution": "What is pure?"
+                    },
+                    {
+                        "value": 600,
+                        "html": true,
+                        "clue": "Two words: 7 and 11 letters. Using a curried function on only some of its arguments, rather than all.",
+                        "solution": "What is partial application?"
+                    },
+                    {
+                        "value": 800,
+                        "html": true,
+                        "clue": "Two words: 9 and 12 letters. According to Donald Knuth, it is the root of all evil.",
+                        "solution": "What is premature optimization?"
+                    },
+                    {
+                        "value": 1000,
+                        "html": true,
+                        "clue": "10 letters. The edict of this says that illegal structures should be inexpressible. Modular programming can help us to achieve it.",
+                        "solution": "What is prevention?"
                     }
                 ]
             },
@@ -173,244 +183,255 @@
                     {
                         "value": 200,
                         "html": true,
-                        "clue": "<ul class='code-lines'><li>let sum (x : float) (y : float) =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;x + y</li></ul>",
-                        "solution": "What is <span class='code'>+</span> should be <span class='code'>+.</span>?"
+                        "clue": "<ul class='code-lines'><li>let f x y = x + y in</li><li>f 1.2 3.4 ;;</li></ul>",
+                        "solution": "What is using <span class='code'>+</span> instead of <span class='code'>+.</span>?"
                     },
                     {
                         "value": 400,
                         "html": true,
-                        "clue": "<ul class='code-lines'><li>let double (x : int) =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;fun x -> x * 2</li></ul>",
-                        "solution": "What is a duplicate argument?"
+                        "clue": "<ul class='code-lines'><li>let length lst =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match lst with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> 0</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: tl -> 1 + length tl</li><li>;;</li></ul>",
+                        "solution": "What is a missing <span class='code'>rec</span>?"
                     },
                     {
                         "value": 600,
                         "html": true,
-                        "clue": "<ul class='code-lines'><li>let sum lst =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match lst with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> 0</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: tl -> 1 + (sum tl)</li></ul>",
-                        "solution": "What is missing <span class='code'>rec</span>?"
+                        "clue": "<ul class='code-lines'><li>let rec sum lst =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match lst with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> 0</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: tl -> hd + sum lst</li></ul>",
+                        "solution": "What is recursively calling on <span class='code'>lst</span> instead of <span class='code'>tl</span>?"
                     },
                     {
                         "value": 800,
                         "html": true,
-                        "clue": "<ul class='code-lines'><li>let map f xs =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match xs with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> []</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: tl -> hd :: (map f tl)</li></ul>",
-                        "solution": "What is needing to apply <span class='code'>f</span> to <span class='code'>hd</span>?"
+                        "clue": "<ul class='code-lines'><li>List.filter (fun x -> x * 2) [1; 2; 3; 4; 5]</li></ul>",
+                        "solution": "What is using a filter function that does not return a <span class='code'>bool</span>?"
                     },
                     {
                         "value": 1000,
                         "html": true,
-                        "clue": "<span class='code'>let odds = List.filter (fun x -> x mod 2)</span>",
-                        "solution": "What is needing to compare the result of <span class='code'>mod</span> to an int?"
+                        "clue": "<ul class='code-lines'><li>let rec max_list lst =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match lst with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> None</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: tl -> Some (max hd (max_list tl)) ;;</li></ul>",
+                        "solution": "What is comparing a <span class='code'>'a</span> with a <span class='code'>'a option</span>?"
                     }
                 ]
             }
         ],
         "double": [
             {
-                "category": "Mutability",
+                "category": "Find the Warning",
                 "clues": [
                     {
                         "value": 400,
                         "html": true,
-                        "clue": "The value of <ul class='code-lines'><li>let x = ref 0 in</li><li>let y = ref 0 in</li><li>if x = y then 2 else 8</li></ul>",
+                        "clue": "<ul class='code-lines'><li>let fst pair =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match pair with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| x, y -> x</li><li>;;</li></ul>",
+                        "solution": "What is unused variable?"
+                    },
+                    {
+                        "value": 800,
+                        "html": true,
+                        "clue": "<ul class='code-lines'><li>let rec reverse (x, y) =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;(y, x)</li><li>;;</li></ul>",
+                        "solution": "What is unused <span class='code'>rec</span>?"
+                    },
+                    {
+                        "value": 1200,
+                        "html": true,
+                        "dailyDouble": true,
+                        "clue": "<ul class='code-lines'><li>let sum_opt (x : int option) (y : int option) : int option =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match x, y with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| None, None -> None</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| Some x, Some y -> Some x + y</li><li>;;</li><li></li><li></li></ul>",
+                        "solution": "What is inexhaustive pattern-matching?"
+                    },
+                    {
+                        "value": 1600,
+                        "html": true,
+                        "clue": "<ul class='code-lines'><li>let rec length lst =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match lst with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> 0</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| _x -> 1</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| _hd :: tl -> 1 + length tl</li><li>;;</li></ul>",
+                        "solution": "What is unused match case?"
+                    },
+                    {
+                        "value": 2000,
+                        "html": true,
+                        "clue": "<ul class='code-lines'><li>type season = Winter | Spring | Summer | Fall ;;</li><li>let season_number s =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match s with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| Winter -> 0</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| Spring -> 1</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| Summer -> 2</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| _ -> 3</li><li>;;</li></ul>",
+                        "solution": "What is fragile pattern matching?"
+                    }
+                ]
+            },
+            {
+                "category": "9 Letter Words",
+                "clues": [
+                    {
+                        "value": 400,
+                        "html": true,
+                        "clue": "This type of function is one without a name.",
+                        "solution": "What is anonymous?"
+                    },
+                    {
+                        "value": 800,
+                        "html": true,
+                        "clue": "To hide implementation details behind an abstraction barrier, specify one of these for a module.",
+                        "solution": "What is signature?"
+                    },
+                    {
+                        "value": 1200,
+                        "html": true,
+                        "clue": "A statement you enforce about values in your representation that you can thus assume to be true is called this.",
+                        "solution": "What is invariant?"
+                    },
+                    {
+                        "value": 1600,
+                        "html": true,
+                        "clue": "Adding explicit typings to your functions can help to satisfy the edict of this.",
+                        "solution": "What is intention?"
+                    },
+                    {
+                        "value": 2000,
+                        "html": true,
+                        "clue": "The verbose extraction and reinjection of values into option types, this can also be used for handling anomalous conditions.",
+                        "solution": "What is exception?"
+                    }
+                ]
+            },
+            {
+                "category": "Map, Fold, and Filter",
+                "clues": [
+                    {
+                        "value": 400,
+                        "html": true,
+                        "clue": "The type of <span class='code'>List.map (fun x -> x *. x).</span>",
+                        "solution": "What is <span class='code'>float list -> float list</span>?"
+                    },
+                    {
+                        "value": 800,
+                        "html": true,
+                        "clue": "The value of <span class='code'>List.map (fun x -> x > 10) [5; 10; 15]</span>.",
+                        "solution": "What is <span class='code'>[false; false; true]</span>?"
+                    },
+                    {
+                        "value": 1200,
+                        "html": true,
+                        "clue": "THe value of the following expression. <ul class='code-lines'><li>[(3, 2); (5, 1); (1, 9)]</li><li>|> List.filter (fun (x, y) -> x > y)</li><li>|> List.length</li></ul>",
                         "solution": "What is <span class='code'>2</span>?"
                     },
                     {
-                        "value": 800,
-                        "html": true,
-                        "clue": "The value of <ul class='code-lines'><li>let x = ref 1 in</li><li>let y = ref x in</li><li>x := !y + 5; !y</li></ul>",
-                        "solution": "What is <span class='code'>6</span>?"
-                    },
-                    {
-                        "value": 1200,
-                        "html": true,
-                        "clue": "This type of the <span class='code'>!</span> operator.",
-                        "solution": "What is <span class='code'>'a ref -> 'a</span>?"
-                    },
-                    {
                         "value": 1600,
-                        "dailyDouble": true,
                         "html": true,
-                        "clue": "The value of <ul class='code-lines'><li>let x = ref 10 in</li><li>let y = x := !x + 1 in</li><li>let z x = x := !x + 1 in</li><li>!x</li></ul>",
-                        "solution": "What is <span class='code'>11</span>?"
-                    },
-                    {
-                        "value": 2000,
-                        "html": true,
-                        "clue": "This type of the <span class='code'>:=</span> operator.",
-                        "solution": "What is <span class='code'>'a ref -> 'a -> unit</span>?"
-                    }
-                ]
-            },
-            {
-                "category": "Streams",
-                "clues": [
-                    {
-                        "value": 400,
-                        "clue": "TO DELAY COMPUTATION OF AN EXPRESSION UNTIL IT'S NEEDED, THIS CORE DATA TYPE CAN BE USED.",
-                        "solution": "What is a function?"
-                    },
-                    {
-                        "value": 800,
-                        "html": true,
-                        "clue": "THE PROBLEM WITH THIS DEFINITION OF SMAP. <ul class='code-lines'><li>let rec smap f s =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;Cons (f (head s), smap f (tail s))</li></ul>",
-                        "solution": "What is needing to wrap streams in a function to delay computation?"
-                    },
-                    {
-                        "value": 1200,
-                        "html": true,
-                        "clue": "This type of <span class='code'>Lazy.force</span>.",
-                        "solution": "What is <span class='code'>'a Lazy.t -> 'a</span>?"
-                    },
-                    {
-                        "value": 1600,
-                        "clue": "A THUNK OFFERS THIS BENEFIT OVER A PURELY FUNCTIONAL IMPLEMENTATION OF LAZINESS.",
-                        "solution": "What is memoization?"
-                    },
-                    {
-                        "value": 2000,
-                        "html": true,
-                        "clue": "The type of the expression <ul class='code-lines'><li>let f x = lazy (x * 2) in</li><li>let y = lazy (f 14) in</li><li>y ;;</li></ul>",
-                        "solution": "What is <span class='code'>int lazy_t lazy_t</span>?"
-                    }
-                ]
-            },
-            {
-                "category": "Modules and Objects",
-                "clues": [
-                    {
-                        "value": 400,
-                        "clue": "THE ONLY OPERATIONS THAT A MODULE USER CAN USE ARE DEFINED IN THIS PART OF A MODULE.",
-                        "solution": "What is the signature?"
-                    },
-                    {
-                        "value": 800,
-                        "html": true,
-                        "clue": "Fill in the blank.<ul class='code-lines'><li>module IntQueue =</li><li>&nbsp;&nbsp;struct</li><li>&nbsp;&nbsp;&nbsp;&nbsp;type int_queue = int list</li><li>&nbsp;&nbsp;&nbsp;&nbsp;let empty_queue = []</li><li>&nbsp;&nbsp;&nbsp;&nbsp;let enqueue elt q = __________</li><li>&nbsp;&nbsp;&nbsp;&nbsp;let dequeue q = List.hd q, List.tl q</li><li>&nbsp;&nbsp;end</li></ul>",
-                        "solution": "What is <span class='code'>q @ [elt]</span>?"
-                    },
-                    {
-                        "value": 1200,
-                        "html": true,
-                        "clue": "The reason why the below is wrong.<ul class='code-lines'><li>open IntQueue ;;</li><li>let q = empty_queue</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |> enqueue 1</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |> enqueue 2</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |> List.rev ;;</li><li>let next, q = dequeue q ;;</li></ul>",
-                        "solution": "What is breaking the abstraction barrier?"
-                    },
-                    {
-                        "value": 1600,
-                        "clue": "THE FOLLOWING, ORDERED BY LIKELY INHERITANCE HIERARCHY FROM SUPERCLASS TO SUBCLASS: RECTANGLE, SQUARE, SHAPE",
-                        "solution": "What is SHAPE, RECTANGLE, SQUARE?"
-                    },
-                    {
-                        "value": 2000,
-                        "clue": "IF ANYTHING THAT CAN BE DONE WITH CLASS TYPE X CAN ALSO BE DONE WITH CLASS TYPE Y, THEN CLASS TYPE X IS THIS OF CLASS TYPE Y.",
-                        "solution": "What is a supertype?"
-                    }
-                ]
-            },
-            {
-                "category": "Semantics",
-                "clues": [
-                    {
-                        "value": 400,
-                        "html": true,
-                        "clue": "The result of the substitution <div class='code'>(fun x -> x + y)[y -> 10]</div>",
-                        "solution": "What is <span class='code'>fun x -> x + 10</span>?"
-                    },
-                    {
-                        "value": 800,
-                        "html": true,
-                        "clue": "The lexical evaluation of <ul class='code-lines'><li>let x = 8 in</li><li>let g () = x + 2 in</li><li>let x = 1 in</li><li>g () ;;</li></ul>",
-                        "solution": "What is <span class='code'>10</span>?"
-                    },
-                    {
-                        "value": 1200,
-                        "html": true,
-                        "clue": "The dynamic evaluation of <ul class='code-lines'><li>let x = 8 in</li><li>let f x = x + 2 in</li><li>let x = 12 in</li><li>f 10 ;;</li></ul>",
+                        "clue": "The value of the following expression. <ul class='code-lines'><li>[1; 2; 3; 4; 5]</li><li>|> List.filter (fun x -> x > 2)</li><li>|> List.fold_left (+) 0</li></ul>",
                         "solution": "What is <span class='code'>12</span>?"
                     },
                     {
-                        "value": 1600,
-                        "html": true,
-                        "clue": "The bug in the substitution rule <ul class='code-lines'><li>(let x = Q in R)[x -> P] =</li><li>let x = Q[x -> P] in R[x -> P]</li></ul>",
-                        "solution": "What is substituting in <span class='code'>R</span>?"
-                    },
-                    {
                         "value": 2000,
                         "html": true,
-                        "clue": "The bug in the environment semantics rule <ul class='code-lines'><li>E ⊢ let x = D in B</li><li>&nbsp;&nbsp;| E{x ↦ D} ⊢ B ⇓ v_B</li><li>&nbsp;&nbsp;| ⇓ v_B</li><ul>",
-                        "solution": "What is needing to evaluate <span class='code'>D</span> first?"
+                        "clue": "The value of the following expression. <ul class='code-lines'><li>List.fold_left</li><li>&nbsp;&nbsp;&nbsp;&nbsp;(fun x y -> x ^ y ^ y)</li><li>&nbsp;&nbsp;&nbsp;&nbsp;\"\"</li><li>&nbsp;&nbsp;&nbsp;&nbsp;[\"a\"; \"b\"; \"c\"; \"d\"; \"e\"]</li></ul>",
+                        "solution": "What is <span class='code'>\"aabbccddee\"</span>"
                     }
                 ]
             },
             {
-                "category": "Edicts",
+                "category": "Write the Function",
                 "clues": [
                     {
                         "value": 400,
-                        "clue": "THE EDICT OF IRREDUNDANCY: NEVER WRITE THE SAME CODE ______.",
-                        "solution": "What is twice?"
+                        "html": true,
+                        "clue": "A function that takes an integer and returns the integer 51 greater than it.",
+                        "solution": "What is <span class='code'>(+) 51</span>?"
                     },
                     {
                         "value": 800,
-                        "clue": "THE EDICT OF DECOMPOSITION (CARVE SOFTWARE AT ITS JOINTS) IS BEST DEMONSTRATED BY THIS STYLE OF PROGRAMMING: IMPERATIVE, OBJECT-ORIENTED, LAZY.",
-                        "solution": "What is object-oriented?"
+                        "html": true,
+                        "clue": "A recursive function to compute the factorial of a non-negative integer.",
+                        "solution": "What is <ul class='code-lines'><li>let rec f x =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;if x = 0 then 1</li><li>&nbsp;&nbsp;&nbsp;&nbsp;else x * f (x - 1)</li><li>;;</li></ul>?"
                     },
                     {
                         "value": 1200,
-                        "clue": "MODULES SIGNATURES HELP TO FOLLOW THE EDICT OF COMPARTMENTALIZATION BY ESTABLISHING ONE OF THESE (SIX SYLLABLES).",
-                        "solution": "What is an abstraction barrier?"
+                        "html": true,
+                        "clue": "A function that optionally returns the head of a list if the list has a head. The function returns None if the list has no head.",
+                        "solution": "What is <ul class='code-lines'><li>let f lst =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match lst with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> None</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: _tl -> Some hd</li><li>;;</li></ul>?"
                     },
                     {
                         "value": 1600,
-                        "clue": "THE ONE THAT SHOWS EDICT OF INTENTION: WRITING A FUNCTION RECURSIVELY, MEMOIZING VALUES, USING ANONYMOUS VARIABLES",
-                        "solution": "What is using anonymous variables?"
+                        "html": true,
+                        "dailyDouble": true,
+                        "clue": "Without using the list module, a function that accepts a list of integers and returns a list of integers with each element incremented by 1.",
+                        "solution": "What is <ul class='code-lines'><li>let rec f lst =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match lst with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> []</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: tl -> (hd + 1) :: f tl</li><li>;;</li></ul>?"
                     },
                     {
                         "value": 2000,
-                        "clue": "BY THE EDICT OF PREVENTION, A LIST OF KEYS AND A LIST OF VALUES IS A POOR WAY TO REPRESENT A DICTIONARY FOR THIS REASON.",
-                        "solution": "What is the ability to express illegal states?"
+                        "html": true,
+                        "clue": "Using a single call to a <span class='code'>List</span> module function, a function that accepts a list of integers and returns the list reversed.",
+                        "solution": "What is <span class='code'>List.fold_left (fun acc elt -> elt :: acc) []</span>?"
                     }
                 ]
             },
             {
-                "category": "Complexity",
+                "category": "Famous Computer Scientists",
                 "clues": [
                     {
                         "value": 400,
                         "html": true,
-                        "clue": "THE TIME COMPLEXITY OF GETTING THE LENGTH OF A LIST OF LENGTH <span class='code'>n</span>.",
-                        "solution": "What is <span class='code'>O(n)</span>?"
+                        "clue": "Writing functions that take arguments one at a time, instead of taking multiple arguments simultaneously, was popularied by this computer scientist.",
+                        "solution": "Who is Haskell Curry?"
                     },
                     {
                         "value": 800,
                         "html": true,
-                        "clue": "THE TIME COMPLEXITY OF the following function <div class='code'>fun lst -> List.fold_left (+) 0 lst</div>",
-                        "solution": "What is <span class='code'>O(n)</span>?"
+                        "clue": "Robin Milner developed the ML programming language, the first functional language with this: the ability to automatically detect the data type of a programming expression.",
+                        "solution": "What is type inference?"
                     },
                     {
                         "value": 1200,
                         "html": true,
-                        "clue": "THE TIME COMPLEXITY OF USING BINARY SEARCH TO FIND AN ELEMENT IN A TREE.",
-                        "solution": "What is <span class='code'>O(log n)</span>?",
-                        "dailyDouble": true
+                        "clue": "Turing Award winner Barbara Liskov is known for her work with hiding the implementation of an abstract data type's functionality behind what's commonly known as this -- don't cross it!",
+                        "solution": "What is the abstraction barrier?"
                     },
                     {
                         "value": 1600,
-                        "clue": "THE REASON WHY ADDING TO THE START OF A LIST IS FASTER THAN ADDING TO THE END.",
-                        "solution": "What is adding to start requires just a cons, while adding to end requires traversal?"
+                        "html": true,
+                        "clue": "Marianne Baudinet is known for her work on this feature of ML-style languages, which allows us to extract the parts from a composite value (especially helpful if the value can take multiple forms).",
+                        "solution": "What is pattern matching?"
                     },
                     {
                         "value": 2000,
                         "html": true,
-                        "clue": "The time complexity of the function <ul class='code-lines'><li>let rec rev xs =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match xs with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;[] -> []</li><li>&nbsp;&nbsp;&nbsp;&nbsp;hd :: tl -> (rev tl) @ [hd]</li></ul>",
-                        "solution": "What is <span class='code'>O(n<sup>2</sup>)</span>"
+                        "clue": "Alonzo Church is known for the development of this logical system that included only functions and their applications, serving as the mathematical precursor to languages like OCaml.",
+                        "solution": "What is the lambda calculus?"
+                    }
+                ]
+            },
+            {
+                "category": "Modules",
+                "clues": [
+                    {
+                        "value": 400,
+                        "html": true,
+                        "clue": "The keyword <span class='code'>module</span> is used for introducing the name of a module. The keywords <span class='code'>module type</span> are used to introduce the name of this part of a module.",
+                        "solution": "What is a module signature?"
+                    },
+                    {
+                        "value": 800,
+                        "html": true,
+                        "clue": "These constructs in OCaml accept modules as arguments, and return new modules.",
+                        "solution": "What are functors?"
+                    },
+                    {
+                        "value": 1200,
+                        "html": true,
+                        "clue": "Fill in the blank in this module definition. <ul class='code-lines'><li>module Stack =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;struct</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type int_stack = int list</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let empty_stack : int_stack = []</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let push elt s : int_stack = ______</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let pop q : int * int_stack =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match q with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| [] -> raise (Invalid_argument \"empty\")</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| hd :: tl -> hd, tl</li><li>&nbsp;&nbsp;&nbsp;&nbsp;end ;;</li></ul>",
+                        "solution": "What is <span class='code'>elt :: s</span>?"
+                    },
+                    {
+                        "value": 1600,
+                        "html": true,
+                        "clue": "When a module signature enforces an abstraction barrier that is too strict, these can be used to define slightly less abstract signatures.",
+                        "solution": "What are sharing constraints?"
+                    },
+                    {
+                        "value": 2000,
+                        "html": true,
+                        "clue": "The following function successfully finds the number of elements in an integer stack, but is problematic for this reason. <ul class='code-lines'><li>let rec size (s : int_stack) =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match s with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> 0</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: tl -> 1 + size tl ;;</li></ul>",
+                        "solution": "What is breaking the abstraction barrier?"
                     }
                 ]
             }
         ],
         "final": {
-            "category": "Polymorphism",
+            "category": "Option Types",
             "html": true,
-            "clue": "A FUNCTION, <span class='code'>curry</span>, THAT TAKES AN UNCURRIED FUNCTION OF TYPE <span class='code'>('a * 'b) -> 'c</span>, AND RETURNS A CURRIED VERSION OF THE FUNCTION.",
-            "solution": "What is <div class='code'>let curry f x y = f (x, y)</div>?"
+            "clue": "The type of the following function. <ul class='code-lines'><li>let f x =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match x with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| None</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| Some _ -> Some x</li></ul>",
+            "solution": "What is <div class='code'>'a option -> 'a option option</div>?"
         }
     }
 }
