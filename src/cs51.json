@@ -338,7 +338,7 @@
                     {
                         "value": 1200,
                         "html": true,
-                        "clue": "A function that optionally returns the head of a list if the list has a head. The function returns None if the list has no head.",
+                        "clue": "A function that optionally returns the head of a list if the list has a head. The function returns <span class='code'>None</span> if the list has no head.",
                         "solution": "What is <ul class='code-lines'><li>let f lst =</li><li>&nbsp;&nbsp;&nbsp;&nbsp;match lst with</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| [] -> None</li><li>&nbsp;&nbsp;&nbsp;&nbsp;| hd :: _tl -> Some hd</li><li>;;</li></ul>?"
                     },
                     {
