@@ -316,7 +316,7 @@
                         "value": 2000,
                         "html": true,
                         "clue": "The value of the following expression. <ul class='code-lines'><li>List.fold_left</li><li>&nbsp;&nbsp;&nbsp;&nbsp;(fun x y -> x ^ y ^ y)</li><li>&nbsp;&nbsp;&nbsp;&nbsp;\"\"</li><li>&nbsp;&nbsp;&nbsp;&nbsp;[\"a\"; \"b\"; \"c\"; \"d\"; \"e\"]</li></ul>",
-                        "solution": "What is <span class='code'>\"aabbccddee\"</span>"
+                        "solution": "What is <span class='code'>\"aabbccddee\"</span>?"
                     }
                 ]
             },
