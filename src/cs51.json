@@ -132,7 +132,7 @@
                         "value": 800,
                         "html": true,
                         "clue": "A type <span class='code'>number</span> for representing either an integer or a floating point number.",
-                        "solution": "What is <ul class='code-lines'><li>type vote =</li><li>| CandidateA</li><li>| CandidateB</li><li>| WriteIn of string</li></ul>?"
+                        "solution": "What is <ul class='code-lines'><li>type number =</li><li>| Int of int</li><li>| Float of float</li></ul>?"
                     },
                     {
                         "value": 1000,
